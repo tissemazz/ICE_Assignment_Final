@@ -4,13 +4,13 @@ var currentdate = new Date();
 const express = require('express');
 const path = require('path');
 
-const app = express();
+var app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(’path.join(__dirname/,'dist/material-dashboard-angular')));
+app.use(express.static(path.join(__dirname, 'dist/material-dashboard-angular')));
 
 app.get("/*", function(req, res) {
-    res.sendFile(’index.html’, {root: '/dist/material-dashboard-angular'}
+    res.sendFile('index.html', {root: '/dist/material-dashboard-angular'}
 );
   });
 
@@ -60,6 +60,6 @@ function getDate() {
 
 // Initial Server Start-up Console Notification
 app.listen(app.get('8080'), function () {
-    var serverStartMessage = "The server is now running on port " + app.get('port') + "! Server started at " + getDate() + ".";
+    var serverStartMessage = "The server is now running on port 8080! Server started at " + getDate() + ".";
     console.log(serverStartMessage);
 });
