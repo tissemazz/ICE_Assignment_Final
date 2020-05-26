@@ -3,8 +3,10 @@ var currentdate = new Date();
 //Install express server
 const express = require('express');
 const path = require('path');
+const favicon = require('serve-favicon');
 
 var app = express();
+app.use(favicon(path.join(__dirname, 'src/favicon.ico')));
 
 // Serve only the static files form the dist directory
 app.use(express.static(path.join(__dirname, 'dist/material-dashboard-angular')));
