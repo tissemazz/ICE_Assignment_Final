@@ -1,0 +1,23 @@
+.list:hover {
+    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
+    border-left: 5px solid red;
+    border-radius: 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+* {
+    transition: 1s ease-in-out;
+}
+
+th {
+    font-weight: 600!important;
+}
+
+td {
+    color: grey;
+}
+
+.table-upgames {
+    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
+    border: 1px solid red;
+}

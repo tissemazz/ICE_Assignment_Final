@@ -1,0 +1,78 @@
+.team-name {
+    margin-top: 20%;
+    color: #fff;
+    background-color: #f44336;
+    border-color: #f44336;
+    padding: 5px;
+    box-shadow: 0 2px 2px 0 rgba(244,67,54,.14),0 3px 1px -2px rgba(244,67,54,.2),0 1px 5px 0 rgba(244,67,54,.12);
+}
+
+
+
+.team-name:hover {
+    box-shadow: 0 14px 26px -12px rgba(244,67,54,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(244,67,54,.2);
+    cursor: default;
+}
+
+.team-name:active {
+    color: #fff;
+    background-color: #f33527;
+    border-color: #e11b0c;
+}
+
+.card {
+    min-height: 200px;
+}
+
+.card:hover, card:active, card:visited {
+    border: 2px solid red;
+}
+
+.card:active {
+    color: green;
+    background-color: green;
+}
+
+.card-body>img {
+    min-height: 150px;
+    min-width: 100px;
+}
+
+@media(max-width: 576px){
+    .card-body>img {
+        text-align: center;
+        justify-content: center;
+        min-height: 150px;
+        min-width: 150px;
+    }
+    .team-name {
+        margin-top: 15%;
+    }
+}
+
+/* 
+.list:hover {
+    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
+    border-left: 5px solid red;
+    border-radius: 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+* {
+    transition: 1s ease-in-out;
+    cursor: default;
+}
+
+th {
+    font-weight: 600!important;
+}
+
+td {
+    color: grey;
+}
+
+.table-upgames {
+    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
+    border: 1px solid red;
+} */
+
