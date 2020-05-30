@@ -1,19 +1,20 @@
 {
-  "name": "material-dashboard-angular",
+  "name": "icefooty",
   "version": "2.4.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o",
+    "heroku-postbuild": "ng build --prod"
   },
   "engines": {
-    "node": "6.11.1",
-    "npm": "3.10.9"
+    "node": "14.3.0",
+    "npm": "6.14.5"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "express": "4.17.1",
     "googleapis": "40.0.0",
     "hammerjs": "2.0.8",
+    "i": "^0.3.6",
     "intro.js": "^2.9.3",
     "jquery": "^3.5.1",
     "moment": "2.24.0",
@@ -53,7 +55,8 @@
     "rxjs-compat": "6.5.2",
     "vanilla-tilt": "^1.7.0",
     "web-animations-js": "2.3.1",
-    "zone.js": "0.10.2"
+    "zone.js": "0.10.2",
+    "typescript": "3.7.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.7",
