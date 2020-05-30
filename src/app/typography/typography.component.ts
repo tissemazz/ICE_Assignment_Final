@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import AOS from 'aos';
+declare var require: any;
+const VanillaTilt = require('vanilla-tilt');
 
 @Component({
   selector: 'app-typography',
@@ -24,18 +27,29 @@ export class TypographyComponent implements OnInit {
     if(this.TeamName!=''){
     this.filterTeamName(this.TeamName);
     }
-    
-    
     });
+
+    VanillaTilt.init(document.querySelectorAll('.test'), {
+      max: 2,
+      speed: 1000,
+      perspective: 1000,
+    });
+
+    AOS.init({
+      delay: 700,
+    });
+
   }
-
-  // filterTeamID(teamID: any) {
-  //   this.gameData = this.gameData.filter(item => item.ateamid==this.TeamID || item.hteamid == this.TeamID);
-  //   console.log(this.gameData)
-  // }
-
+  
   filterTeamName(teamName: any) {
     this.gameData = this.gameData.filter(item => item.winner==this.TeamName && item.round < 20);
+    this.gameData.map((item)=>{
+      if(item.hteam==teamName){
+        var temp = item.ateam;
+        item.ateam = item.hteam;
+        item.hteam = temp;
+      }
+      });
     console.log(this.gameData);
   }
 

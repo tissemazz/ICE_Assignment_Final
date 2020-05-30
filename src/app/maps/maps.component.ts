@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from "rxjs";
+import { map, filter } from "rxjs/operators";
+import AOS from 'aos';
 
-declare const google: any;
+declare var require: any;
+const VanillaTilt = require('vanilla-tilt');
+declare var $: any;
 
-interface Marker {
-lat: number;
-lng: number;
-label?: string;
-draggable?: boolean;
-}
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
@@ -15,111 +15,78 @@ draggable?: boolean;
 })
 export class MapsComponent implements OnInit {
 
-  constructor() { }
+  gameData: Array<any> = [];
+  filteredGameData: Array<any> = [];
+  teamData: Array<any> = [];
 
-  ngOnInit() {
 
-    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-    var mapOptions = {
-        zoom: 13,
-        center: myLatlng,
-        scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-        styles: [{
-            "featureType": "water",
-            "stylers": [{
-                "saturation": 43
-            }, {
-                "lightness": -11
-            }, {
-                "hue": "#0088ff"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "hue": "#ff0000"
-            }, {
-                "saturation": -100
-            }, {
-                "lightness": 99
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "geometry.stroke",
-            "stylers": [{
-                "color": "#808080"
-            }, {
-                "lightness": 54
-            }]
-        }, {
-            "featureType": "landscape.man_made",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#ece2d9"
-            }]
-        }, {
-            "featureType": "poi.park",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#ccdca1"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-                "color": "#767676"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-                "color": "#ffffff"
-            }]
-        }, {
-            "featureType": "poi",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "landscape.natural",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "visibility": "on"
-            }, {
-                "color": "#b8cb93"
-            }]
-        }, {
-            "featureType": "poi.park",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "poi.sports_complex",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "poi.medical",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "poi.business",
-            "stylers": [{
-                "visibility": "simplified"
-            }]
-        }]
+  // IMG_BASE_URL = 'https://squiggle.com.au';
 
-    };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  constructor(private http: HttpClient) { }
 
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        title: "Hello World!"
+  showNotification(from, align) {
+    const type = ['', 'info', 'success', 'warning', 'danger'];
+
+    const color = Math.floor((Math.random() * 4) + 1);
+
+    $.notify({
+      icon: "help",
+      message: `<h3 class="p-0 m-0">Hey There!</h3> Please Select Your Rival Team to view the games they have played`
+
+    }, {
+      type: type[color],
+      timer: 4000,
+      placement: {
+        from: from,
+        align: align
+      },
+      template: '<div data-notify="container" class="col-xl-4 col-lg-4 col-11 col-sm-4 col-md-4 alert alert-{0} alert-with-icon" role="alert">' +
+        '<button mat-button  type="button" aria-hidden="true" class="close mat-button" data-notify="dismiss">  <i class="material-icons">close</i></button>' +
+        '<i class="material-icons" data-notify="icon">notifications</i> ' +
+        '<span data-notify="title">{1}</span> ' +
+        '<span data-notify="message">{2}</span>' +
+        '<div class="progress" data-notify="progressbar">' +
+        '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+        '</div>' +
+        '<a href="{3}" target="{4}" data-notify="url"></a>' +
+        '</div>'
     });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
   }
 
+  ngOnInit() {
+    this.http.get("https://api.squiggle.com.au/?q=games;year=2019")
+      .subscribe((data: any) => {
+        this.gameData = data.games;
+      });
+    this.http.get("https://api.squiggle.com.au/?q=teams")
+      .subscribe((data: any) => {
+        this.teamData = data.teams;
+      });
+
+    VanillaTilt.init(document.querySelectorAll('.test'), {
+      max: 2,
+      speed: 1000,
+      perspective: 1000,
+    });
+
+    AOS.init({
+      delay: 700,
+    });
+  }
+
+  filterTeamID(TeamID: any) {
+    this.filteredGameData = this.gameData.filter(item => item.ateamid == TeamID || item.hteamid == TeamID && item.round < 20);
+    console.log(this.filteredGameData)
+
+    this.filteredGameData.map((item) => {
+      if (item.hteamid == TeamID) {
+        var temp_team = item.ateam;
+        var temp_score = item.ascore;
+        item.ateam = item.hteam;
+        item.ascore = item.hscore;
+        item.hteam = temp_team;
+        item.hscore = temp_score;
+      }
+    });
+  }
 }

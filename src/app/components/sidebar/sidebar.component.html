@@ -1,9 +1,5 @@
-<div class="logo">
-    <a href="https://www.latrobe.edu.au/" class="simple-text">
-        <div class="logo-img">
-            <img src="/assets/img/logo2.svg"/>
-        </div>
-    </a>
+<div class="logo justify-content-center text-center" style="height: 150px;">
+    <img class="mx-auto" style="width: 180px;" src="/assets/img/logo2.svg"/>
 </div>
 <div class="sidebar-wrapper">
   <!-- <div *ngIf="isMobileMenu()">
@@ -54,7 +50,7 @@
     </ul>
   </div> -->
     <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+        <li routerLinkActive="active"  *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>

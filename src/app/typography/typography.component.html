@@ -1,11 +1,15 @@
-
-<div class="main-content">
-  <div class="container">
-      <div class="row">
-        <div  class="col-xl-12 table-upgames p-5 table-responsive">
-          <h1>Venue</h1>
-      <table class="table table-stripped">
-        <thead>
+<div class="main-content mt-4">
+    <div class="container" data-aos="fade-in">
+        <div class="row">
+         
+  <div class="card container test">
+    <div class="card-header card-header-danger" >
+      <h4 class="card-title">Winning Venues</h4>
+      <p class="card-category">{{TeamName}}</p>
+    </div>
+    <div class="card-content table-responsive table-full-width">
+      <table class="table">
+        <thead class="text-danger">
           <tr>
             <th scope="col">Date</th>
             <th scope="col">Team A</th>
@@ -19,21 +23,24 @@
         <tbody>
           <tr class="list" *ngFor="let filter1 of gameData">
             <td>{{filter1.date | date:'longDate'}}</td>
-            <td>{{filter1.ateam}}</td>
-            <td>{{filter1.ascore}}</td>
-            <td>{{filter1.hteam}}</td>
-            <td>{{filter1.hscore}}</td>
+            <td class="text-danger font-weight-bold">{{filter1.ateam}}</td>
+            <td class="text-warning font-weight-bold">{{filter1.ascore}}</td>
+            <td class="text-danger font-weight-bold">{{filter1.hteam}}</td>
+            <td class="text-warning font-weight-bold">{{filter1.hscore}}</td>
             <td>{{filter1.winner}}</td>
             <td>{{filter1.venue}}</td>
           </tr>
         </tbody>
       </table>
     </div>
-      </div>
   </div>
-
-
-
+        </div>
+ </div>
+</div>
+  
+  
+  
+  
 
 
 

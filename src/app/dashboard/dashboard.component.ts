@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from "rxjs";
 import { map, filter } from "rxjs/operators";
-import * as Chartist from 'chartist';
-import {Team} from '../team';
 import { Router } from '@angular/router';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +15,8 @@ export class DashboardComponent implements OnInit {
 
   teams = [];
   games: any;
+
+  TeamName: any;
 
   responseData: any
 
@@ -35,6 +36,10 @@ export class DashboardComponent implements OnInit {
       err => { console.log(err); },
       () => { console.log(this.responseData); }
     );
+
+    AOS.init({
+      delay: 700,
+    });
    
   }
 

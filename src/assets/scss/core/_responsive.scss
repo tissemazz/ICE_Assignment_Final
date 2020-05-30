@@ -161,7 +161,7 @@
         right: 230px;
         content: "";
         z-index: 1029;
-        overflow-x: hidden;
+        // overflow-x: hidden;
     }
 
     // for demo
@@ -295,7 +295,7 @@
 
     html,
     body{
-        overflow-x: hidden;
+        // overflow-x: hidden;
     }
 
      .menu-on-left{
@@ -602,7 +602,7 @@
         background: rgba(0, 0, 0, 0.35);
         content: "";
         z-index: 9999;
-        overflow-x: hidden;
+        // overflow-x: hidden;
 
         @include transitions($slow-transition-time, $transition-ease-in);
 
@@ -758,7 +758,7 @@
         right: 260px;
         content: "";
         z-index: 9999;
-        overflow-x: hidden;
+        // overflow-x: hidden;
     }
 
     .social-line .btn{

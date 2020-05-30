@@ -19,6 +19,7 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { AngularTiltModule } from 'angular-tilt';
 
 
 
@@ -39,14 +40,14 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     RouterModule,
     AppRoutingModule,
     MatAutocompleteModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    AngularTiltModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+    // })
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

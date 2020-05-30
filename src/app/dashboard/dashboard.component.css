@@ -10,7 +10,7 @@
 
 
 .team-name:hover {
-    box-shadow: 0 14px 26px -12px rgba(244,67,54,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(244,67,54,.2);
+    box-shadow: 0 14px 28px #f5f6fa, 0 10px 10px #EF5E5B;
     cursor: default;
 }
 
@@ -21,21 +21,36 @@
 }
 
 .card {
+    border-radius: 5px;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
     min-height: 200px;
+    box-shadow: 0 14px 28px #f5f6fa, 0 10px 10px #EF5E5B;
+}
+
+* {
+    transition: 0.3s ease-in-out;
 }
 
 .card:hover, card:active, card:visited {
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(255,0,0,0.07)!important; 
+    transition: 0.3s ease-in-out;
 }
-
+/* 
 .card:active {
     color: green;
     background-color: green;
-}
+} */
 
 .card-body>img {
     min-height: 150px;
     min-width: 100px;
+    margin-top: 10%;
 }
 
 @media(max-width: 576px){
@@ -50,29 +65,19 @@
     }
 }
 
-/* 
-.list:hover {
-    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
-    border-left: 5px solid red;
-    border-radius: 0.5rem;
-    transition: 0.3s ease-in-out;
+h1 {
+	font-size: 2em;
+	text-transform: uppercase;
+	color: #c0392b;
+	margin: 0.5em;
+	text-align: center;
+	font-family: 'Teko', sans-serif;
+	font-weight: 700;
+    line-height: 0.9;
+    
 }
 
-* {
-    transition: 1s ease-in-out;
-    cursor: default;
+.heading-team {
+    border-bottom: 2px solid red;
+    margin-bottom: 2rem;    
 }
-
-th {
-    font-weight: 600!important;
-}
-
-td {
-    color: grey;
-}
-
-.table-upgames {
-    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
-    border: 1px solid red;
-} */
-

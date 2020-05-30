@@ -1,0 +1,48 @@
+
+
+<div class="main-content mt-4">
+    <div class="container content" data-aos="fade-in">
+        <div class="row">
+         
+            <div class="row text-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                   <div class="btn-group">
+                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">Select Round</button>
+                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                   <button class="dropdown-item" *ngFor="let team of teamData" (click)="filterTeamID(team.id)" type="button">{{team.name}}</button>
+                 </div>
+                   </div>
+               </div>
+              </div>
+    <div class="card-content  table-responsive table-full-width">
+      <table class="table">
+        <thead class="text-danger">
+          <th>Date</th>
+          <th>Venue</th>
+          <th>Team</th>
+          <th>Score</th>
+          <th>Team B</th>
+          <th>Score</th>
+          <th>Winner</th>
+        </thead>
+        <tbody>
+          <tr class="list" *ngFor="let filter1 of gameData">
+            <td>{{filter1.date | date:'longDate'}}</td>
+              <td>{{filter1.venue}}</td>
+              <td class="text-danger font-weight-bold">{{filter1.ateam}}</td>
+              <td class="text-warning font-weight-bold">{{filter1.ascore}}</td>
+              <td class="text-danger font-weight-bold">{{filter1.hteam}}</td>
+              <td class="text-warning font-weight-bold">{{filter1.hscore}}</td>
+              <td>{{filter1.winner}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  

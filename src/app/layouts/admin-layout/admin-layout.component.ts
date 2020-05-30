@@ -70,7 +70,7 @@ export class AdminLayoutComponent implements OnInit {
       }
 
       $('.fixed-plugin a').click(function(event){
-        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the section active
           if($(this).hasClass('switch-trigger')){
               if(event.stopPropagation){
                   event.stopPropagation();
