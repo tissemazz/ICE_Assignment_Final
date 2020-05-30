@@ -23,40 +23,6 @@ export class UpgradeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.TeamID = localStorage.getItem('TeamID');
-    this.TeamName = localStorage.getItem('TeamName');
-    this.http.get("https://api.squiggle.com.au/?q=games;year=2019")
-    .subscribe((data:any)=>{
-    this.gameData = data.games;
-    if(this.TeamID!=''){
-    this.filterTeamID(this.TeamID);
-    }
-    
-    });
-
-     VanillaTilt.init(document.querySelectorAll('.test'), {
-      max: 2,
-      speed: 1000,
-      perspective: 1000,
-    });
-
-    AOS.init({
-      delay: 700,
-    });
 
   }
-
-  filterTeamID(teamID: any) {
-    this.gameData = this.gameData.filter(item => item.ateamid==this.TeamID || item.hteamid == this.TeamID && item.round < 20);
-    this.gameData.map((item)=>{
-      if(item.hteamid==teamID){
-        var temp = item.ateam;
-        item.ateam = item.hteam;
-        item.hteam = temp;
-      }
-      });
-  }
-    
-  }
-
-
+}
