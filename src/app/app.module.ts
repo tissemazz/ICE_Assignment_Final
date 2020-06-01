@@ -28,6 +28,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LadderComponent } from './ladder/ladder.component';
 
 @NgModule({
   imports: [

@@ -15,8 +15,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LadderComponent } from 'app/ladder/ladder.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   imports: [
@@ -37,7 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     TableListComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
+    MapsComponent, //matisse
+    LadderComponent, //matisse
     NotificationsComponent,
     UpgradeComponent,
   ]

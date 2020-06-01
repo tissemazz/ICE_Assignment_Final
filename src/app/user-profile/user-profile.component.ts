@@ -2,8 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Team} from '../team';
 import { HttpClient } from '@angular/common/http';
 import AOS from 'aos';
-
-import {DashboardComponent} from '../dashboard/dashboard.component'
+import {DashboardComponent} from '../dashboard/dashboard.component';
 
 declare var require: any;
 const VanillaTilt = require('vanilla-tilt');
