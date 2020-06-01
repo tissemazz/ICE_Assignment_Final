@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { TeamWinsComponent } from 'app/team-wins/team-wins.component';
 import { LadderComponent } from 'app/ladder/ladder.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
@@ -39,10 +40,12 @@ import {MatSelectModule} from '@angular/material/select';
     TableListComponent,
     TypographyComponent,
     IconsComponent,
+    TeamWinsComponent, //matisse
     MapsComponent, //matisse
     LadderComponent, //matisse
     NotificationsComponent,
     UpgradeComponent,
+    
   ]
 })
 

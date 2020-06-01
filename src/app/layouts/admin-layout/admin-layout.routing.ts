@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { LadderComponent } from '../../ladder/ladder.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { TeamWinsComponent } from 'app/team-wins/team-wins.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -58,8 +59,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
+    { path: 'team-wins',      component: TeamWinsComponent},
     { path: 'maps',           component: MapsComponent },
     { path: 'ladder',           component: LadderComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    
 ];

@@ -12,10 +12,12 @@ export const ROUTES: RouteInfo[] = [
     { path: '/user-profile', title: 'Games',  icon:'sports_football', class: '' },
     { path: '/table-list', title: 'Upcoming Games',  icon:'skip_next', class: '' },
     { path: '/typography', title: 'Venues',  icon:'emoji_events', class: '' },
+    { path: '/team-wins', title: "My Team's Wins", icon:'trending_up', class:''},
     { path: '/icons', title: 'Head To Head',  icon:'people_alt', class: '' },
     { path: '/ladder', title: '2019 Ladder',  icon:'format_list_numbered', class: '' },
     { path: '/maps', title: 'Rival Games',  icon:'security', class: '' },
     { path: '/notifications', title: 'Extras',  icon:'notifications', class: '' },
+    
 ];
 
 @Component({

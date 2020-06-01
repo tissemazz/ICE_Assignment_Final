@@ -18,7 +18,7 @@ export class LadderComponent implements OnInit {
   constructor(private http: HttpClient) { }
   
   ladderData: Array<any> = [];
-  position: any;
+  rank: any;
   
   ngOnInit(): void {
     
@@ -40,7 +40,8 @@ export class LadderComponent implements OnInit {
     });
   }
 
-  getLadder(){
-
+  getPosition(rank: any){
+    this.ladderData = this.ladderData.filter(item => item.rank);
+    this.ladderData.map(rank);
   }
 }
