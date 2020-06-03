@@ -43,9 +43,6 @@ import { TeamWinsComponent } from './team-wins/team-wins.component';
     AppRoutingModule,
     MatAutocompleteModule,
     AngularTiltModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    // })
   ],
   declarations: [
     AppComponent,

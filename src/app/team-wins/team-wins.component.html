@@ -1,1 +1,67 @@
-<p>team-wins works!</p>
+<div class="main-content mt-5">
+    <div class="container-fluid" data-aos="fade-in">
+        <div class="row text-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <div class="btn-group">
+                <!--<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                Select Round
+                </button>-->
+                <select [(ngModel)]="pick_round" class="btn btn-danger dropdown-toggle" (change)="run()">
+                  <option value="none" hidden>Select a Round</option>
+                  <option value = "1">Round 1</option>
+                  <option value = "2">Round 2</option>
+                  <option value = "3">Round 3</option>
+                  <option value = "4">Round 4</option>
+                  <option value = "5">Round 5</option>
+                  <option value = "6">Round 6</option>
+                  <option value = "7">Round 7</option>
+                  <option value = "8">Round 8</option>
+                  <option value = "9">Round 9</option>
+                  <option value = "10">Round 10</option>
+                  <option value = "11">Round 11</option>
+                  <option value = "12">Round 12</option>
+                  <option value = "13">Round 13</option>
+                  <option value = "14">Round 14</option>
+                  <option value = "15">Round 15</option>
+                  <option value = "16">Round 16</option>
+                  <option value = "17">Round 17</option>
+                  <option value = "18">Round 18</option>
+                  <option value = "19">Round 19</option>
+                  (change)="ChangingValue($event)" [value]='none'>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="card container">
+        <div class="card-header card-header-danger" >
+          <h4 class="card-title">Info up to your round</h4>
+          <p class="card-category">Team: {{TeamName}}</p>
+        </div>
+        <div class="card-content  table-responsive table-full-width">
+          <table class="table">
+            <thead class="text-danger">
+              <th>Round</th> 
+              <th>Venue</th>
+              <th>Home</th>
+              <th>Score</th>
+              <th>Away</th>
+              <th>Score</th>
+              <th>Winner</th>
+            </thead>
+            <tbody>
+              <tr class="list" *ngFor="let filter1 of gameData">
+                <td>{{filter1.round}}</td>
+                  <td>{{filter1.venue}}</td>
+                  <td class="text-danger font-weight-bold">{{filter1.hteam}}</td>
+                  <td class="text-warning font-weight-bold">{{filter1.hscore}}</td>
+                  <td class="text-danger font-weight-bold">{{filter1.ateam}}</td>
+                  <td class="text-warning font-weight-bold">{{filter1.ascore}}</td>
+                  <td>{{filter1.winner}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+
