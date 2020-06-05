@@ -1,0 +1,19 @@
+<div class="main-content mt-4">
+    <div class="container-fluid" data-aos="zoom-in">
+        <div class="row">
+            <div class="col-xl-7 text-center mx-auto heading-team text-center">
+                 <h1>Select Your Team</h1>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6 col-12 col-xl-3 card-head" *ngFor="let team of responseData" (click)="getTeamGames(team.id,team.name)">
+                <div class="card  container col-xl-9 col-12 text-center" >
+                    <div class="card-body">
+                    <img [src]="team.logo" width="100px" class="text-center" alt="img">
+                    <p class="team-name">{{team.abbrev}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,42 @@
+
+
+<div class="main-content mt-4">
+  <div class="container content" data-aos="fade-in">
+      <div class="row">
+       
+<div class="card container test">
+  <div class="card-header card-header-danger" >
+    <h4 class="card-title">Games This Season</h4>
+    <p class="card-category">{{TeamName}}</p>
+  </div>
+  <div class="card-content  table-responsive table-full-width">
+    <table class="table">
+      <thead class="text-danger">
+        <th>Date</th>
+        <th>Venue</th>
+        <th>Team</th>
+        <th>Score</th>
+        <th>Team B</th>
+        <th>Score</th>
+        <th>Winner</th>
+      </thead>
+      <tbody>
+        <tr class="list" *ngFor="let filter1 of gameData">
+          <td>{{filter1.date | date:'longDate'}}</td>
+            <td>{{filter1.venue}}</td>
+            <td class="text-danger font-weight-bold">{{filter1.ateam}}</td>
+            <td class="text-warning font-weight-bold">{{filter1.ascore}}</td>
+            <td class="text-danger font-weight-bold">{{filter1.hteam}}</td>
+            <td class="text-warning font-weight-bold">{{filter1.hscore}}</td>
+            <td>{{filter1.winner}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+      </div>
+  </div>
+</div>
+
+
+

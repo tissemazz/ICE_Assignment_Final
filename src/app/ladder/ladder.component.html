@@ -1,0 +1,38 @@
+<!-- Matisse Mazzone-->
+<div class="main-content mt-4">
+    <div class="container content" data-aos="fade-in">
+        <div class="row">
+         
+  <div class="card container">
+    <div class="card-header card-header-danger" >
+      <h3 class="card-title">THE 2019 AFL LADDER</h3>
+    </div>
+    <div class="card-content  table-responsive table-full-width">
+      <table class="table">
+        <thead class="text-danger">
+          <th>Position</th>
+          <th>Team</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Points</th>
+        </thead>
+        <tbody>
+          <tr class="list" *ngFor="let standings of teamStandings">
+            <td> {{ standings.rank }} </td> <!-- Use this for teams position -->
+            <td> {{ standings.name }} </td> <!-- Use this for teams -->
+            <td> {{ standings.wins }} </td> <!-- Use this for wins -->
+            <td> {{ standings.losses }} </td> <!-- Use this for losses-->
+            <td> {{ standings.pts }}  </td> <!-- Use this for points -->
+          </tr>
+        </tbody>
+        {{rankData()}}
+      </table>
+    </div>
+  </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  

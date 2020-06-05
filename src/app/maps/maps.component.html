@@ -1,0 +1,61 @@
+<!-- Matisse Mazzone -->
+<div class="main-content mt-5">
+    <div class="container-fluid" data-aos="fade-in">
+       <div class="row text-center">
+         <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+           Select Your Rival Team
+          </button>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" >
+            <button class="dropdown-item" *ngFor="let team of teamData" (click)="filterTeamID(team.id)" type="button">{{team.name}}</button>
+          </div>
+            </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="card container">
+          <div class="card-header card-header-danger" >
+            <h4 class="card-title">Your Rival Team</h4>
+          </div>
+          <div class="card-content table-responsive table-full-width">
+            <table class="table">
+              <thead class="text-danger">
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Venue</th>
+                    <th scope="col">Rival Team</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Opponent</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="list" *ngFor="let team of filteredGameData">
+                    <td>{{team.date | date:'longDate'}}</td>
+                    <td>{{team.venue}}</td>
+                    <td class="text-danger font-weight-bold">{{team.ateam}}</td>
+                    <td class="text-warning font-weight-bold">{{team.ascore}}</td>
+                    <td class="text-danger font-weight-bold">{{team.hteam}}</td>
+                    <td class="text-warning font-weight-bold">{{team.hscore}}</td>
+                    <td>{{team.winner}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+       </div>
+  
+    </div>
+  </div>
+  
+  
+       
+  <button mat-raised-button class="btn btn-danger notif-btn" (click)="showNotification('bottom','right')"><span class="material-icons">
+    help_outline
+    </span></button>
+  
+  
+  
+  
