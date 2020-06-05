@@ -41,7 +41,6 @@ export class LadderComponent implements OnInit {
   };
 
   rankData() {
-    console.log(this.teamStandings)
     this.teamStandings.map((item) => {
       item.rank
       item.name

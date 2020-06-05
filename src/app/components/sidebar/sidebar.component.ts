@@ -8,15 +8,15 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
+    { path: '/news', title: 'News',  icon:'tv', class: '' },
     { path: '/ladder', title: '2019 Ladder',  icon:'format_list_numbered', class: '' },
-    { path: '/dashboard', title: 'Select Team',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'Games',  icon:'sports_football', class: '' },
-    { path: '/table-list', title: 'Upcoming Games',  icon:'skip_next', class: '' },
-    { path: '/typography', title: 'Venues',  icon:'emoji_events', class: '' },
-    { path: '/team-wins', title: "My Team's Wins", icon:'trending_up', class:''},
-    { path: '/icons', title: 'Head To Head',  icon:'people_alt', class: '' },
-    { path: '/maps', title: 'Rival Games',  icon:'security', class: '' },
-    { path: '/notifications', title: 'Extras',  icon:'notifications', class: '' },
+    { path: '/dashboard', title: '1. Select Team',  icon: 'dashboard', class: '' },
+    { path: '/user-profile', title: '2. Games',  icon:'sports_football', class: '' },
+    { path: '/table-list', title: '3. Upcoming Games',  icon:'skip_next', class: '' },
+    { path: '/typography', title: '4. Venues',  icon:'emoji_events', class: '' },
+    { path: '/team-wins', title: "5. My Team's Wins", icon:'trending_up', class:''},
+    { path: '/icons', title: '6. Head To Head',  icon:'people_alt', class: '' },
+    { path: '/maps', title: '7. Rival Games',  icon:'security', class: '' },
 ];
 
 @Component({

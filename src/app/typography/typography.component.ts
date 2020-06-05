@@ -48,9 +48,12 @@ export class TypographyComponent implements OnInit {
         var temp = item.ateam;
         item.ateam = item.hteam;
         item.hteam = temp;
+        var tempScore = item.ascore;
+        item.ascore = item.hscore;
+        item.hscore = tempScore;
+
       }
       });
-    console.log(this.gameData);
   }
 
 }

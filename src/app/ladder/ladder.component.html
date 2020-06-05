@@ -3,9 +3,10 @@
     <div class="container content" data-aos="fade-in">
         <div class="row">
          
-  <div class="card container">
+  <div class="card container test">
     <div class="card-header card-header-danger" >
-      <h3 class="card-title">THE 2019 AFL LADDER</h3>
+      <h3 class="card-title">AFL Ladder</h3>
+      <p class="card-category">2019</p>
     </div>
     <div class="card-content  table-responsive table-full-width">
       <table class="table">
@@ -19,10 +20,10 @@
         <tbody>
           <tr class="list" *ngFor="let standings of teamStandings">
             <td> {{ standings.rank }} </td> <!-- Use this for teams position -->
-            <td> {{ standings.name }} </td> <!-- Use this for teams -->
-            <td> {{ standings.wins }} </td> <!-- Use this for wins -->
-            <td> {{ standings.losses }} </td> <!-- Use this for losses-->
-            <td> {{ standings.pts }}  </td> <!-- Use this for points -->
+            <td class="text-danger font-weight-bold"> {{ standings.name }} </td> <!-- Use this for teams -->
+            <td class="text-warning font-weight-bold"> {{ standings.wins }} </td> <!-- Use this for wins -->
+            <td class="text-warning font-weight-bold"> {{ standings.losses }} </td> <!-- Use this for losses-->
+            <td class="text-danger font-weight-bold"> {{ standings.pts }}  </td> <!-- Use this for points -->
           </tr>
         </tbody>
         {{rankData()}}

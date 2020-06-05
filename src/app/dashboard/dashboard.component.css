@@ -7,8 +7,6 @@
     box-shadow: 0 2px 2px 0 rgba(244,67,54,.14),0 3px 1px -2px rgba(244,67,54,.2),0 1px 5px 0 rgba(244,67,54,.12);
 }
 
-
-
 .team-name:hover {
     box-shadow: 0 14px 28px #f5f6fa, 0 10px 10px #EF5E5B;
     cursor: default;
@@ -33,7 +31,6 @@
 }
 
 .card:hover, card:active, card:visited {
-    /* border: 2px solid red; */
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
                 0 2px 4px rgba(0,0,0,0.07), 
                 0 4px 8px rgba(0,0,0,0.07), 
@@ -41,11 +38,6 @@
                 0 16px 32px rgba(255,0,0,0.07)!important; 
     transition: 0.3s ease-in-out;
 }
-/* 
-.card:active {
-    color: green;
-    background-color: green;
-} */
 
 .card-body>img {
     min-height: 150px;

@@ -14,7 +14,7 @@ th {
 }
 
 .card:hover {
-    box-shadow: 0 14px 28px #f5f6fa, 0 10px 10px #EF5E5B;
+    box-shadow:  0 14px 28px #f5f6fa, 0 10px 10px #EF5E5B;
     border: 0;
     transition: 0.5s ease;
 }

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -53,10 +53,10 @@
     "popper.js": "1.15.0",
     "rxjs": "6.5.2",
     "rxjs-compat": "6.5.2",
+    "typescript": "3.7.5",
     "vanilla-tilt": "^1.7.0",
     "web-animations-js": "2.3.1",
-    "zone.js": "0.10.2",
-    "typescript": "3.7.5"
+    "zone.js": "0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.7",

@@ -17,11 +17,8 @@ import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { AngularTiltModule } from 'angular-tilt';
-
-
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import {
@@ -30,6 +27,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LadderComponent } from './ladder/ladder.component';
 import { TeamWinsComponent } from './team-wins/team-wins.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   imports: [
@@ -46,7 +44,7 @@ import { TeamWinsComponent } from './team-wins/team-wins.component';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
+    AdminLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

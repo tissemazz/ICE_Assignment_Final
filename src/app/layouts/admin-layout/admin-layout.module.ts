@@ -9,7 +9,6 @@ import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -19,6 +18,7 @@ import { TeamWinsComponent } from 'app/team-wins/team-wins.component';
 import { LadderComponent } from 'app/ladder/ladder.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { NewsComponent } from 'app/news/news.component';
 
 
 @NgModule({
@@ -43,8 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
     TeamWinsComponent, //matisse
     MapsComponent, //matisse
     LadderComponent, //matisse
-    NotificationsComponent,
     UpgradeComponent,
+    NewsComponent,
     
   ]
 })

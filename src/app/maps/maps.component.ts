@@ -76,7 +76,6 @@ export class MapsComponent implements OnInit {
 
   filterTeamID(TeamID: any) {
     this.filteredGameData = this.gameData.filter(item => item.ateamid == TeamID || item.hteamid == TeamID && item.round < 20);
-    console.log(this.filteredGameData)
 
     this.filteredGameData.map((item) => {
       if (item.hteamid == TeamID) {

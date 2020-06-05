@@ -19,9 +19,6 @@ export class IconsComponent implements OnInit {
   filteredGameData: Array<any> = [];
   teamData: Array<any> = [];
 
-
-  // IMG_BASE_URL = 'https://squiggle.com.au';
-
   constructor(private http: HttpClient) { }
 
   showNotification(from, align){
@@ -85,6 +82,10 @@ export class IconsComponent implements OnInit {
         item.ateamid = item.hteamid;
         item.hteam = temp;
         item.hteamid = temp_id;
+        var tempScore = item.ascore;
+        item.ascore = item.hscore;
+        item.hscore = tempScore;
+
       }
     });
   }

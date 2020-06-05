@@ -50,8 +50,13 @@ export class UserProfileComponent implements OnInit {
     this.gameData.map((item)=>{
       if(item.hteamid==teamID){
         var temp = item.ateam;
+        var tempScore = item.ascore;
+
         item.ateam = item.hteam;
+        item.ascore = item.hscore;
+
         item.hteam = temp;
+        item.hscore = tempScore;
       }
       });
   }
