@@ -1,0 +1,13 @@
+<div class="logo justify-content-center text-center" style="height: 170px;">
+    <img class="mx-auto" style="width: 180px;" src="../../../assets/img/afl-logo-svg-vector.svg"/>
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active"  *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,31 @@
+.list:hover {
+    box-shadow: 1px 1px 10px 5px #ECEDF2 ;
+    border-left: 10px solid red;
+    border-right: 10px solid red;
+    transition: 0.3s ease-in-out;
+}
+
+* {
+    transition: 1s ease-in-out;
+}
+
+th {
+    font-weight: 600!important;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px #f5f6fa, 0 10px 10px #EF5E5B;
+    border: 0;
+    transition: 0.5s ease;
+}
+
+.card {
+    border: 1px solid #F44336;
+    transition: 0.5s ease;
+}
+
+@media (min-width: 1200px) { 
+    .card-content {
+        overflow-x: hidden;
+    }
+ }

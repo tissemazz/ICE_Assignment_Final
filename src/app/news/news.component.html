@@ -1,0 +1,48 @@
+
+  <div class="main-content mt-4">
+    <div class="container" data-aos="fade-in">
+        <div class="row">
+         
+  <div class="card container ">
+    <div class="card-header mb-5 card-header-danger" >
+      <h4 class="card-title">AFL News</h4>
+      <p class="card-category">Recent</p>
+    </div>
+    <div class="d-flex my-3 my-lg-3 my-md-3 my-xl-4 " *ngFor="let article of articles">
+        <div class="row">
+            <div class="col-xl-6 col-12 col-lg-12">
+        <div class="image-section">
+            <img src="{{article.urlToImage}}" class="img-fluid" alt="Paid Subscription Required (Image))">
+        </div>
+    </div>
+    <div class="col-xl-6 col-12 col-lg-12 my-xl-auto my-lg-0 my-md-0 my-0">
+        <div class="text-heading p-2">
+            <h1 class="display-1 title">{{article.title}}</h1>
+            <small class="text-muted">Date Published {{article.publishedAt | date:'longDate'}}</small>
+            <p class="description">{{article.description}}</p>
+            <p class="text-muted author">Published by: {{article.author}}</p>
+            <a href="{{article.url}}">Read full article</a>
+        </div>
+    </div>
+    </div>
+      </div>    
+  </div>
+ </div>
+ </div>
+</div>
+
+<!-- 
+<div *ngFor="let article of articles">
+    <h2>{{article.title}}</h2>
+  
+      <p>
+        {{article.description}}
+      </p>
+      <a href="{{article.url}}">Read full article</a>
+  </div>   
+  
+   -->
+  
+
+
+
